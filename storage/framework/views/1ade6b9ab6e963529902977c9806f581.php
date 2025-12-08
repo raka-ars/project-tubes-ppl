@@ -12,7 +12,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm modern-nav">
     <div class="container">
 
-        <a class="navbar-brand fw-bold fs-4" href="{{ route('home') }}">
+        <a class="navbar-brand fw-bold fs-4" href="<?php echo e(route('home')); ?>">
             IMNTT
         </a>
 
@@ -23,43 +23,43 @@
         <div id="navMenu" class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto gap-2">
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('home') ? 'active-nav' : '' }}"
-                       href="{{ route('home') }}">
+                    <a class="nav-link <?php echo e(request()->routeIs('home') ? 'active-nav' : ''); ?>"
+                       href="<?php echo e(route('home')); ?>">
                        Home
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('informasi.*') ? 'active-nav' : '' }}"
-                       href="{{ route('informasi.index') }}">
+                    <a class="nav-link <?php echo e(request()->routeIs('informasi.*') ? 'active-nav' : ''); ?>"
+                       href="<?php echo e(route('informasi.index')); ?>">
                        Informasi
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('agenda.*') ? 'active-nav' : '' }}"
-                       href="{{ route('agenda.index') }}">
+                    <a class="nav-link <?php echo e(request()->routeIs('agenda.*') ? 'active-nav' : ''); ?>"
+                       href="<?php echo e(route('agenda.index')); ?>">
                        Agenda
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('gallery') ? 'active-nav' : '' }}"
-                       href="{{ route('gallery') }}">
+                    <a class="nav-link <?php echo e(request()->routeIs('gallery') ? 'active-nav' : ''); ?>"
+                       href="<?php echo e(route('gallery')); ?>">
                        Dokumentasi
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('kontak') ? 'active-nav' : '' }}"
-                       href="{{ route('kontak') }}">
+                    <a class="nav-link <?php echo e(request()->routeIs('kontak') ? 'active-nav' : ''); ?>"
+                       href="<?php echo e(route('kontak')); ?>">
                        Kontak
                     </a>
                 </li>
             </ul>
 
-            <form class="d-flex" action="{{ route('search') }}" method="get">
-                <input class="form-control me-2" name="q" placeholder="Cari..." value="{{ request('q') }}">
+            <form class="d-flex" action="<?php echo e(route('search')); ?>" method="get">
+                <input class="form-control me-2" name="q" placeholder="Cari..." value="<?php echo e(request('q')); ?>">
                 <button class="btn btn-light" type="submit">Cari</button>
             </form>
 
@@ -72,18 +72,19 @@
 
 
 <div class="container">
-    @if(session('success'))
-      <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
+    <?php if(session('success')): ?>
+      <div class="alert alert-success"><?php echo e(session('success')); ?></div>
+    <?php endif; ?>
 
-    @yield('content')
+    <?php echo $__env->yieldContent('content'); ?>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <footer class="mt-5 py-4 text-center text-muted" style="background:#f1f3f5;">
     <div class="container">
-        <p class="mb-0">&copy; {{ date('Y') }} IMNTT — Ikatan Mahasiswa Nusa Tenggara Timur</p>
+        <p class="mb-0">&copy; <?php echo e(date('Y')); ?> IMNTT — Ikatan Mahasiswa Nusa Tenggara Timur</p>
         <small>Dibangun dengan Laravel 10</small>
     </div>
 </body>
 </html>
+<?php /**PATH C:\Users\HP-PC\Documents\project-tubes-ppl\resources\views/layouts/app.blade.php ENDPATH**/ ?>
