@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ /* -------- GLOBAL RESET -------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* -------- GLOBAL BODY STYLE -------- */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #1f2937; /* Gray-800 */
+  background: linear-gradient(to bottom, #ffffff, #f8fafc);
+  scroll-behavior: smooth;
+}
+
+/* -------- SMOOTH SHADOW / CARD STYLE -------- */
+.card-modern {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.card-modern:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  border-color: #d1d5db;
+}
+
+/* -------- MODERN TITLE SECTION -------- */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+
+/* -------- FADE-IN ANIMATION -------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.7s forwards ease-out;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------- NAVBAR MODERN -------- */
+.nav-modern {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 16px 32px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.nav-modern a {
+  color: #111827;
+  font-weight: 500;
+  margin: 0 16px;
+  transition: 0.25s ease;
+}
+
+.nav-modern a:hover {
+  color: #2563eb;
+}
+
+/* -------- RESPONSIVE GRID -------- */
+.grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  padding: 0 40px;
+}
+/* ---------------------- DARK MODE ---------------------- */
+
+html.dark body {
+  background: #0f172a; /* slate-900 */
+  color: #f8fafc; /* slate-50 */
+}
+
+/* Cards */
+html.dark .card-modern {
+  background: #1e293b; /* slate-800 */
+  border-color: #334155; /* slate-700 */
+}
+
+html.dark .card-modern:hover {
+  background: #243248;
+  border-color: #475569;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Navbar */
+html.dark .nav-modern {
+  background: rgba(15,23,42,0.7);
+  border-color: #334155;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+
+html.dark .nav-modern a {
+  color: #e2e8f0;
+}
+
+html.dark .nav-modern a:hover {
+  color: #60a5fa; /* blue-400 */
+}
+
+/* Title section */
+html.dark .section-title {
+  color: #f1f5f9; /* slate-100 */
+}
+
+html.dark .section-subtitle {
+  color: #94a3b8; /* slate-400 */
+}
+
+/* General text */
+html.dark .text-gray-600 {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-gray-900 {
+  color: #f8fafc !important;
+}
+
