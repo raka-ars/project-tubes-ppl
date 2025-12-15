@@ -1,1 +1,0 @@
-<?php /**PATH C:\laravel\tubes-ppl\resources\views/public/search.blade.php ENDPATH**/ ?>
