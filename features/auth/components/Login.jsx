@@ -13,10 +13,11 @@ export function Login() {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        // Mock authentication
+
         if (email && password) {
             localStorage.setItem("isAuthenticated", "true");
-            router.push("/");
+            router.push("/"); // Redirect ke beranda
+            router.refresh(); // Refresh untuk update navbar
         } else {
             alert("Please enter email and password");
         }
@@ -27,9 +28,9 @@ export function Login() {
             <div className="w-full max-w-md rounded-lg bg-white p-8 shadow-lg">
                 <div className="mb-6 text-center">
                     <img
-                        src="https://d22po4pjz3o32e.cloudfront.net/logo-image.svg"
-                        alt="Logo"
-                        className="mx-auto h-12"
+                        src="/logo-im-ntt.jpg"
+                        alt="Logo IM NTT"
+                        className="mx-auto h-12 w-auto object-contain"
                     />
                     <h1 className="mt-4 text-2xl font-bold text-gray-900">Masuk Akun</h1>
                     <p className="mt-2 text-sm text-gray-600">
@@ -53,15 +54,23 @@ export function Login() {
                         <Input
                             id="password"
                             type="password"
-                            placeholder="********"
+                            placeholder=""
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
                     </div>
-                    <Button type="submit" className="w-full">
+                    <Button
+                        type="submit"
+                        className="w-full rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 
+             px-4 py-2 text-sm font-semibold text-white shadow-md 
+             transition-all duration-200 hover:from-blue-700 hover:to-indigo-700 
+             hover:shadow-lg focus:outline-none focus:ring-2 
+             focus:ring-blue-400 focus:ring-offset-2"
+                    >
                         Masuk
                     </Button>
+
                 </form>
             </div>
         </section>

@@ -18,8 +18,8 @@ export function Testimonial22() {
             <div className="mb-5 md:mb-6">
               <div className="mb-8 md:mb-10 lg:mb-12">
                 <img
-                  src="https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg"
-                  alt="Webflow logo"
+                  src=""
+                  alt=""
                   className="max-h-12"
                 />
               </div>
@@ -51,8 +51,8 @@ export function Testimonial22() {
             <div className="mb-5 md:mb-6">
               <div className="mb-8 md:mb-10 lg:mb-12">
                 <img
-                  src="https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg"
-                  alt="Webflow logo"
+                  src=""
+                  alt=""
                   className="max-h-12"
                 />
               </div>
@@ -84,8 +84,8 @@ export function Testimonial22() {
             <div className="mb-5 md:mb-6">
               <div className="mb-8 md:mb-10 lg:mb-12">
                 <img
-                  src="https://d22po4pjz3o32e.cloudfront.net/webflow-logo.svg"
-                  alt="Webflow logo"
+                  src=""
+                  alt=""
                   className="max-h-12"
                 />
               </div>

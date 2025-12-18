@@ -124,13 +124,10 @@ export function Footer10() {
                 </li>
                 <li className="text-small py-2">
                   <a href="#" className="flex items-center gap-3">
-                    Dapatkan update terbaru tentang berita kampus, agenda
-                    akademik, dan prestasi mahasiswa langsung ke email Anda.
                   </a>
                 </li>
                 <li className="text-small py-2">
                   <a href="#" className="flex items-center gap-3">
-                    Masukkan email
                   </a>
                 </li>
               </ul>
@@ -147,20 +144,6 @@ export function Footer10() {
                 className="mb-3 grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-[1fr_max-content] md:gap-y-4"
                 onSubmit={formState.handleSubmit}
               >
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="Terima kasih telah berlangganan TEL-U News."
-                  value={formState.email}
-                  onChange={formState.handleSetEmail}
-                />
-                <Button
-                  title="Terjadi kesalahan saat memproses langganan Anda."
-                  variant="secondary"
-                  size="sm"
-                >
-                  Terjadi kesalahan saat memproses langganan Anda.
-                </Button>
               </form>
               <p className="text-tiny">
                 © 2025 TEL-U News. Semua hak dilindungi.
@@ -172,35 +155,15 @@ export function Footer10() {
           <div className="flex flex-col-reverse items-start md:flex-row md:gap-6 lg:items-center">
             <div className="grid grid-flow-row grid-cols-[max-content] justify-center gap-y-4 md:grid-flow-col md:justify-center md:gap-x-6 md:gap-y-0 lg:text-left">
               <p className="mt-8 md:mt-0">
-                © 2024 Relume. All rights reserved.
+
               </p>
               <a href="#" className="underline">
-                Privacy Policy
               </a>
               <a href="#" className="underline">
-                Terms of Service
               </a>
               <a href="#" className="underline">
-                Cookies Settings
               </a>
             </div>
-          </div>
-          <div className="mb-8 flex items-center justify-center gap-3 lg:mb-0">
-            <a href="#">
-              <BiLogoFacebookCircle className="size-6" />
-            </a>
-            <a href="#">
-              <BiLogoInstagram className="size-6" />
-            </a>
-            <a href="#">
-              <FaXTwitter className="size-6 p-0.5" />
-            </a>
-            <a href="#">
-              <BiLogoLinkedinSquare className="size-6" />
-            </a>
-            <a href="#">
-              <BiLogoYoutube className="size-6" />
-            </a>
           </div>
         </div>
       </div>
