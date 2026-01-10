@@ -31,85 +31,84 @@ export default function RootLayout({ children }) {
       <body>
         {/* Navbar disembunyikan khusus di halaman login */}
         {!isLoginPage && (
-          <nav className="nav-modern flex items-center justify-between px-6 py-4 border-b bg-white">
-            {/* Kiri: Brand */}
-            <div className="text-2xl font-bold">IM NTT</div>
+          <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-slate-900/70 backdrop-blur-md transition-all duration-300">
+            <div className="container mx-auto flex h-20 items-center justify-between px-6">
 
-            {/* Tengah: Menu utama */}
-            <div className="flex items-center space-x-6">
-              <a href="/" className="hover:text-blue-600 transition-colors">
-                Beranda
-              </a>
-              <a
-                href="/tentang-kami"
-                className="hover:text-blue-600 transition-colors"
-              >
-                Tentang kami
-              </a>
-              <a
-                href="/berita"
-                className="hover:text-blue-600 transition-colors"
-              >
-                Berita
+              {/* Kiri: Brand / Logo */}
+              <a href="/" className="flex items-center gap-3 group">
+                <div className="relative h-12 w-12 overflow-hidden rounded-full shadow-lg shadow-blue-500/20 transition-transform duration-300 group-hover:scale-110 border border-white/10">
+                  <img
+                    src="/logo.png"
+                    alt="Logo IM NTT"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <span className="text-xl font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors drop-shadow-sm">
+                  IM NTT
+                </span>
               </a>
 
-              <div className="relative group">
-                <button className="flex items-center gap-1 hover:text-blue-600 transition-colors">
-                  <span>Lainnya</span>
-                  <span className="text-xs">▼</span>
-                </button>
-                <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute right-0 mt-2 w-44 rounded-md border bg-white shadow-lg z-50">
-                  <a
-                    href="/agenda-kampus"
-                    className="block px-4 py-2 text-sm hover:bg-gray-100 text-left"
-                  >
-                    Agenda kampus
-                  </a>
-                  <a
-                    href="/prestasi"
-                    className="block px-4 py-2 text-sm hover:bg-gray-100 text-left"
-                  >
-                    Prestasi
-                  </a>
-                  <a
-                    href="/kontak"
-                    className="block px-4 py-2 text-sm hover:bg-gray-100 text-left"
-                  >
-                    Kontak
-                  </a>
+              {/* Tengah: Menu utama */}
+              <div className="hidden md:flex items-center space-x-8">
+                <a href="/" className="text-sm font-medium text-slate-200 hover:text-white hover:drop-shadow-[0_0_8px_rgba(96,165,250,0.5)] transition-all">
+                  Beranda
+                </a>
+                <a href="/tentang-kami" className="text-sm font-medium text-slate-200 hover:text-white hover:drop-shadow-[0_0_8px_rgba(96,165,250,0.5)] transition-all">
+                  Tentang Kami
+                </a>
+                <a href="/berita" className="text-sm font-medium text-slate-200 hover:text-white hover:drop-shadow-[0_0_8px_rgba(96,165,250,0.5)] transition-all">
+                  Berita
+                </a>
+
+                <div className="relative group">
+                  <button className="flex items-center gap-1 text-sm font-medium text-slate-200 hover:text-white hover:drop-shadow-[0_0_8px_rgba(96,165,250,0.5)] transition-all">
+                    <span>Lainnya</span>
+                    <span className="text-[10px] ml-1">▼</span>
+                  </button>
+                  <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-200 absolute right-0 mt-2 w-48 rounded-xl border border-white/10 bg-slate-800/90 backdrop-blur-xl shadow-xl p-2 z-50">
+                    <a href="/agenda-kampus" className="block rounded-lg px-4 py-2 text-sm text-slate-200 hover:bg-white/10 hover:text-blue-400 transition-colors">
+                      Agenda Kampus
+                    </a>
+                    <a href="/prestasi" className="block rounded-lg px-4 py-2 text-sm text-slate-200 hover:bg-white/10 hover:text-blue-400 transition-colors">
+                      Prestasi
+                    </a>
+                    <a href="/kontak" className="block rounded-lg px-4 py-2 text-sm text-slate-200 hover:bg-white/10 hover:text-blue-400 transition-colors">
+                      Kontak
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Kanan: jika login -> profil + logout, jika tidak -> tombol login */}
-            <div className="flex items-center gap-4">
-              {isAuthenticated ? (
-                <>
+              {/* Kanan: Authenticated User / Login */}
+              <div className="flex items-center gap-4">
+                {isAuthenticated ? (
+                  <div className="flex items-center gap-3">
+                    <a
+                      href="/profile"
+                      className="group relative h-10 w-10 overflow-hidden rounded-full border-2 border-white/20 shadow-md ring-2 ring-transparent hover:ring-blue-400 transition-all"
+                    >
+                      <img
+                        src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg"
+                        alt="Profile"
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                    </a>
+                    <button
+                      onClick={handleLogout}
+                      className="hidden md:block px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-red-500/80 to-red-600/80 hover:from-red-600 hover:to-red-700 rounded-full shadow-lg shadow-red-500/20 backdrop-blur-sm transition-all duration-300"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                ) : (
                   <a
-                    href="/profile"
-                    className="block h-10 w-10 overflow-hidden rounded-full border border-neutral-200"
+                    href="/login"
+                    className="px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 rounded-full shadow-lg shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-blue-500/40"
                   >
-                    <img
-                      src="https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg"
-                      alt="Profile"
-                      className="h-full w-full object-cover"
-                    />
+                    Login
                   </a>
-                  <button
-                    onClick={handleLogout}
-                    className="px-4 py-2 text-sm text-white bg-red-600 hover:bg-red-700 rounded-md transition-colors"
-                  >
-                    Logout
-                  </button>
-                </>
-              ) : (
-                <a
-                  href="/login"
-                  className="px-4 py-2 text-sm text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
-                >
-                  Login
-                </a>
-              )}
+                )}
+              </div>
             </div>
           </nav>
         )}
